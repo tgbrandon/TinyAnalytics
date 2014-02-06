@@ -3,6 +3,7 @@ package com.bytefly.analytics.util;
 import android.app.Activity;
 import android.app.Dialog;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.view.Gravity;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -14,11 +15,16 @@ public class NetworkAsyncTask extends AsyncTask<String, Integer, Long> {
 	AnalyticsHttpConnector wconnect = null;
 	boolean res = false;
 	Dialog dialog = null;
-
+	
+	public NetworkAsyncTask(Activity leet){
+		act=leet;
+	}
+	
 	@Override
 	protected Long doInBackground(String... params) {
 		wconnect = new AnalyticsHttpConnector();
-		res = wconnect.executeHttpDoAction(act, paramValue);
+		res = wconnect.executeHttpDoAction(act, params[0]);
+		Log.d("Analytics",Boolean.toString(res));
 		return null;
 	}
 

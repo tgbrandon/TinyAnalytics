@@ -18,7 +18,7 @@ import android.util.Log;
 
 public class AnalyticsHttpConnector {
 
-	private static final String SERVER_URL = "http://www.bytefly.com/apps/analytics/doaction.php";
+	private static final String SERVER_URL = "http://www.bytefly.com/apps/analytics/doaction.php?app=";
 
 	final static String TAG = "AnalyticsHttpConnector";
 
