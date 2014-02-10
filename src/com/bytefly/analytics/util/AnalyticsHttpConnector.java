@@ -45,6 +45,11 @@ public class AnalyticsHttpConnector {
 			// for the url here, be sure to encode the parameter
 			String citystr = java.net.URLEncoder.encode(params, "ISO-8859-1");
 			String url = SERVER_URL + params;
+			
+			if (Debug.debugging) {
+				// add debug to app name
+				url+=".debug";
+			}
 
 			// we also add a unique id for tracking
 			String android_id = Secure.getString(act.getContentResolver(),
