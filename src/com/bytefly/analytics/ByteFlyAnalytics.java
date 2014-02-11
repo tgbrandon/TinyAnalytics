@@ -9,7 +9,8 @@ import com.bytefly.analytics.util.Version;
 
 public class ByteFlyAnalytics {
 
-	public static void init() {
+	public static void init(boolean debugState) {
+		Debug.debugging = debugState;
 		if (Debug.debugging) {
 			Log.d(Debug.TAG, "Version " + Version.VERSION);
 		}
